@@ -1,3 +1,7 @@
+# 忽略 YOLO 和 U-Net 模型的權重檔案
+*.h5
+*.pt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
