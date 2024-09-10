@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # +
-# # !python detect_custom_color.py --conf-thres 0.5 --weights ./AllinOne_trained/best.pt --source 測試用_人工驗證 --img-size 640 --save-txt --project DEMO_For_YOLO_as_Input --class-colors "0 0 255 240 176 0 0 255 0"
+# # !python detect_custom_color.py --conf-thres 0.5 --weights ./AllinOne_trained/best.pt --source DEMO_For_YOLO_as_Input --img-size 640 --save-txt --project DEMO_For_YOLO_as_Input --class-colors "0 0 255 240 176 0 0 255 0"
 
 # +
 # Label標籤: AL=0 MB=1 Central_complex=2
