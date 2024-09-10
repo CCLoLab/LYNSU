@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Need to change the download link to your own cloud storage link
 # Download YOLOv7 model weights and save in AllinOne_trained directory
 echo "Downloading YOLOv7 model weights..."
 mkdir -p AllinOne_trained
