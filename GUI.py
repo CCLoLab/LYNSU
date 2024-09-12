@@ -932,7 +932,7 @@ import dash_bootstrap_components as dbc
 import tifffile as tif
 from werkzeug.utils import secure_filename
 import dash_uploader as du  # 引入 dash_uploader
-
+import sys
 # 設定目錄
 UPLOAD_FOLDER = 'User_Input_DLG_tif/'
 YOLO_OUTPUT_FOLDER = 'DEMO_YOLO_Inference/exp/'
@@ -1076,8 +1076,8 @@ def process_image(n_clicks, selected_regions, upload_progress):
     # 处理上传文件路径
 #     print(upload_progress)
     if n_clicks > 0 and upload_progress is not None:
-        subprocess.run(['python', 'Step1_讀取DLG_tif檔案_輸出成2D投影圖.py'])
-        subprocess.run(['python', 'Step2_2024_最終使用者網頁應用程式_YOLOv7_inference.py'])
+        subprocess.run([sys.executable, 'Step1_讀取DLG_tif檔案_輸出成2D投影圖.py'])
+        subprocess.run([sys.executable, 'Step2_2024_最終使用者網頁應用程式_YOLOv7_inference.py'])
 
         png_files = [f for f in os.listdir(YOLO_OUTPUT_FOLDER) if f.endswith('.png')]
 
@@ -1107,14 +1107,14 @@ def process_next(n_clicks, selected_regions):
         
         for region in selected_regions:
             script_name = f"Step3_YOLO結果預處理給3D_UNet切割_輸出放回原始影像_{region}.py"
-            subprocess.run(['python', script_name])
+            subprocess.run([sys.executable, script_name])
             
             brain_region_folder = BRAIN_REGION_PATHS[region]
             tif_file = [f for f in os.listdir(brain_region_folder) if f.startswith('Seg') and f.endswith('.tif')]
             if tif_file:
                 download_buttons.append(html.A(f'下載 {region}.tif', href=f'/download/{region}/{tif_file[0]}', download=f'{region}.tif', className='btn btn-secondary m-2'))
         
-        subprocess.run(['python', 'Step4_合併所有原始解析度切割結果影像＿輸出.py'])
+        subprocess.run([sys.executable, 'Step4_合併所有原始解析度切割結果影像＿輸出.py'])
 
         status_messages.append(html.Div("所有腦區切割已完成，正在展示最終合併影像..."))
         status_messages.append(html.Div("*注意: 下方圖像是不區分前後順序的展示，目的是展示切割腦區【數量】是否正確"))

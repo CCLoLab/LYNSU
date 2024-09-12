@@ -15,6 +15,7 @@
 import subprocess
 import os
 import shutil
+import sys
 # 設定儲存母資料夾路徑: 網頁應用程式暫存資料夾 # 這個通常不會動
 folder = 'DEMO_YOLO_Inference/'
 # 清空並重建 'folder' 資料夾
@@ -24,7 +25,8 @@ if os.path.exists(folder):
 def run_yolo_inference():
     # 定義命令
     command = [
-        'python', 'detect_custom_color.py', 
+        sys.executable,  # 這裡保證使用虛擬環境的 Python
+        'detect_custom_color.py', 
         '--conf-thres', '0.5', 
         '--weights', './AllinOne_trained/best.pt', 
         '--source', 'DEMO_For_YOLO_as_Input', 
@@ -40,7 +42,7 @@ def run_yolo_inference():
     
     # 打印輸出結果（如果需要）
     print("標準輸出:", result.stdout)
-#     print("標準錯誤:", result.stderr)
+    # print("標準錯誤:", result.stderr)
 
 if __name__ == "__main__":
     run_yolo_inference()
