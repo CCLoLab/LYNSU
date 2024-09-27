@@ -1171,7 +1171,8 @@ if __name__ == '__main__':
     if os.path.exists(UPLOAD_FOLDER):
         shutil.rmtree(UPLOAD_FOLDER)
     os.makedirs(UPLOAD_FOLDER)
-    app.run_server(debug=True, port=13826)
+    # app.run_server(debug=True, port=13826)
+    app.run_server(debug=True, host='0.0.0.0', port=13826)
 
 
 
