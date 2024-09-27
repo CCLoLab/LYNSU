@@ -5,8 +5,8 @@ werkzeug==2.1.2
 patchify==0.2.3
 dash_bootstrap_components==1.2.1
 onnx==1.13.1
-# tensorflow==2.8.0
-tensorflow
+tensorflow==2.8.0
+# tensorflow
 datetime==4.6
 thop==0.1.1.post2209072238
 numpy==1.22.0
