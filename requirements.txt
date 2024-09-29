@@ -25,3 +25,4 @@ flask==2.1.2
 packaging==21.3
 imagecodecs
 gdown
+classification-models-3D==1.0.6
