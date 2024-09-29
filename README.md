@@ -19,9 +19,18 @@ touch "$STORAGE_LOCATION/.env" (STORAGE_LOCATION 路徑請更改成自己的路�
 -e STORAGE_DIR="/workspace" \
 --name my_tensorflow_container kaiyihsu/lynsu_image_with_packages*
 
+*執行bash download_models.sh 下載所有模型權重*
 
+*python GUI.py啟動程序*
 
+**第二種: 自行安裝pip套件 (可能遭遇cuda版本衝突)**
 
-*拉取映像檔: docker pull kaiyihsu/lynsu_image_with_packages >>安裝torch(可能只需安裝torchvision==0.15.2 就會自動安裝對應版本的torch 2.0.1) >> 安裝requirements.txt >> 下載模型*
-**第一步先安裝Use_pip_install_pytorch.txt，第二步安裝requirements.txt，第三步執行bash download_models.sh 下載所有模型權重，即可python GUI.py啟動程序**
+*安裝torch(先安裝 pip install torchvision==0.15.2 就會自動安裝對應版本的torch 2.0.1)*
+
+*安裝requirements.txt pip install -r requirements.txt*
+
+*執行bash download_models.sh 下載所有模型權重*
 p.s Win系統需要手動複製 download_models.sh內容指令貼到終端機執行
+*python GUI.py啟動程序*
+
+**建議使用Docker Image建立環境，可以無需額外安裝任何套件即可直接使用LYNSU 網頁應用程序**
