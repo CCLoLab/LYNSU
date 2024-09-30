@@ -9,15 +9,15 @@ The code for this project is hosted on GitHub. We will provide the training and 
 
 *拉取映像檔: docker pull kaiyihsu/lynsu_image_with_packages*
 
-掛載持久化資料夾路徑: export STORAGE_LOCATION=/home/brc/TensorFlow_Dev && \
+*掛載持久化資料夾路徑: export STORAGE_LOCATION=/home/brc/TensorFlow_Dev && \
 mkdir -p $STORAGE_LOCATION && \
-touch "$STORAGE_LOCATION/.env" (STORAGE_LOCATION 路徑請更改成自己的路徑)
+touch "$STORAGE_LOCATION/.env" (STORAGE_LOCATION 路徑請更改成自己的路徑)*
 
-啟動容器: docker run -p 13826:13826 -it --gpus all \
+*啟動容器: docker run -p 13826:13826 -it --gpus all \
 -v ${STORAGE_LOCATION}:/workspace \
 -v ${STORAGE_LOCATION}/.env:/workspace/.env \
 -e STORAGE_DIR="/workspace" \
---name my_tensorflow_container kaiyihsu/lynsu_image_with_packages
+--name my_tensorflow_container kaiyihsu/lynsu_image_with_packages*
 
 *執行bash download_models.sh 下載所有模型權重*
 
