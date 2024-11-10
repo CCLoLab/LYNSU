@@ -1,6 +1,8 @@
 # LYNSU
 **LYNSU**: Automated neuropil segmentation of fluorescent images for Drosophila brains.
 
+**中文版說明**: [README_zh.md](https://github.com/CCLoLab/LYNSU/blob/Training_and_Inference/README_zh.md)
+
 The code for this project is hosted on GitHub. We will provide the training and inference code upon the publication of our paper. Visit our repository here: [LYNSU GitHub Repository](https://github.com/CCLoLab/LYNSU)
 
 **Two Methods to Set Up the Environment:**
